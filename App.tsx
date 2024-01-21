@@ -10,13 +10,27 @@ import {
 } from '@expo/vector-icons'
 import OtherPage from './src/OtherPage'
 import { StatusBar } from 'expo-status-bar'
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context'
 
 const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <SafeAreaProvider>
       <StatusBar style="light" backgroundColor="black" />
+      <Routing />
+    </SafeAreaProvider>
+  )
+}
+
+const Routing = () => {
+  const insets = useSafeAreaInsets()
+
+  return (
+    <NavigationContainer>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
@@ -25,6 +39,8 @@ export default function App() {
             borderTopWidth: 0,
             height: 50,
             paddingTop: 10,
+            paddingBottom: 0,
+            marginBottom: insets.bottom ? insets.bottom - 5 : 0,
           },
           tabBarActiveTintColor: '#F81E6E',
           tabBarInactiveTintColor: '#000000',

@@ -19,6 +19,7 @@ import {
   Montserrat_600SemiBold,
 } from '@expo-google-fonts/montserrat'
 import { useNavigation } from '@react-navigation/native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const ProfilePage = () => {
   const fonts = useFonts({
@@ -28,6 +29,7 @@ const ProfilePage = () => {
   })
 
   const navigation = useNavigation()
+  const insets = useSafeAreaInsets()
 
   const [profileImage, setProfileImage] =
     useState<ImagePicker.ImagePickerAsset>()
@@ -150,7 +152,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <View style={styles.basiccontainer}>
+    <View style={[styles.basiccontainer, { paddingTop: insets.top }]}>
       <Text style={[styles.title, { fontFamily: 'Montserrat_600SemiBold' }]}>
         OPISKELIJAKORTTI
       </Text>

@@ -28,7 +28,7 @@ const bigScreenStyle = StyleSheet.create({
     gap: 20,
   },
   title: {
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: '500',
     color: '#fff',
     marginBottom: 20,
@@ -111,7 +111,7 @@ const bigScreenStyle = StyleSheet.create({
   textView: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: '15%',
+    marginTop: '10%',
   },
   profileInfo: {
     gap: 20,
@@ -132,7 +132,7 @@ const bigScreenStyle = StyleSheet.create({
     textAlign: 'left',
   },
   profileTextSmall: {
-    fontSize: 17,
+    fontSize: 18,
     fontWeight: '300',
     color: '#fff',
     textAlign: 'left',
