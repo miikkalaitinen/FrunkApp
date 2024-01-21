@@ -1,5 +1,5 @@
 import { Text, View, Image, Pressable } from 'react-native'
-import { styles } from '../styles'
+import { isSmallScreen, styles } from '../styles'
 import { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
 import AsyncStorage from '@react-native-async-storage/async-storage'
@@ -18,6 +18,7 @@ import {
   Montserrat_500Medium,
   Montserrat_600SemiBold,
 } from '@expo-google-fonts/montserrat'
+import { useNavigation } from '@react-navigation/native'
 
 const ProfilePage = () => {
   const fonts = useFonts({
@@ -25,6 +26,8 @@ const ProfilePage = () => {
     Montserrat_500Medium,
     Montserrat_600SemiBold,
   })
+
+  const navigation = useNavigation()
 
   const [profileImage, setProfileImage] =
     useState<ImagePicker.ImagePickerAsset>()
@@ -80,6 +83,10 @@ const ProfilePage = () => {
     if (studentnumber) {
       setStudentnumber(studentnumber)
     }
+
+    if (!picture && !logo) {
+      navigation.navigate('Diamond' as never)
+    }
   }
 
   const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
@@ -89,8 +96,8 @@ const ProfilePage = () => {
   const buttonOpacity = useSharedValue(1)
 
   const buttonBackgrounStyle = useAnimatedStyle(() => ({
-    transform: [{ scale: buttonBGSize.value }],
-    opacity: buttonOpacity.value,
+    transform: [{ scale: withSpring(buttonBGSize.value) }],
+    opacity: withSpring(buttonOpacity.value),
   }))
 
   const animatedButtonStyle = useAnimatedStyle(() => ({
@@ -107,15 +114,26 @@ const ProfilePage = () => {
       ),
       -1
     )
-    buttonBGSize.value = withRepeat(
-      withSequence(
-        withTiming(1.6, { duration: 0 }),
-        withTiming(2.4, { duration: 820 }),
-        withTiming(0.5, { duration: 0 }),
-        withTiming(1, { duration: 500 })
-      ),
-      -1
-    )
+
+    isSmallScreen()
+      ? (buttonBGSize.value = withRepeat(
+          withSequence(
+            withTiming(1.8, { duration: 0 }),
+            withTiming(2.8, { duration: 820 }),
+            withTiming(0.5, { duration: 0 }),
+            withTiming(1, { duration: 500 })
+          ),
+          -1
+        ))
+      : (buttonBGSize.value = withRepeat(
+          withSequence(
+            withTiming(1.6, { duration: 0 }),
+            withTiming(2.4, { duration: 820 }),
+            withTiming(0.5, { duration: 0 }),
+            withTiming(1, { duration: 500 })
+          ),
+          -1
+        ))
     buttonOpacity.value = withRepeat(
       withSequence(
         withTiming(1, { duration: 0 }),
@@ -175,8 +193,8 @@ const ProfilePage = () => {
             </Text>
             <Text
               style={[
-                styles.profileText,
-                { fontSize: 16, fontFamily: 'Montserrat_300Light' },
+                styles.birthdayText,
+                { fontFamily: 'Montserrat_300Light' },
               ]}
             >
               {birthday}
@@ -185,16 +203,16 @@ const ProfilePage = () => {
           <View>
             <Text
               style={[
-                styles.profileText,
-                { fontSize: 17, fontFamily: 'Montserrat_300Light' },
+                styles.profileTextSmall,
+                { fontFamily: 'Montserrat_300Light' },
               ]}
             >
               {schoolTitle}
             </Text>
             <Text
               style={[
-                styles.profileText,
-                { fontSize: 17, fontFamily: 'Montserrat_300Light' },
+                styles.profileTextSmall,
+                { fontFamily: 'Montserrat_300Light' },
               ]}
             >
               {school}
@@ -203,16 +221,16 @@ const ProfilePage = () => {
           <View>
             <Text
               style={[
-                styles.profileText,
-                { fontSize: 17, fontFamily: 'Montserrat_300Light' },
+                styles.profileTextSmall,
+                { fontFamily: 'Montserrat_300Light' },
               ]}
             >
               {studentnumberTitle}
             </Text>
             <Text
               style={[
-                styles.profileText,
-                { fontSize: 17, fontFamily: 'Montserrat_300Light' },
+                styles.profileTextSmall,
+                { fontFamily: 'Montserrat_300Light' },
               ]}
             >
               {studentnumber}

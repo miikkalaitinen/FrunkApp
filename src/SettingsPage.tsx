@@ -19,12 +19,11 @@ const SettingsPage = () => {
   const [studentnumberTitle, setStudentnumberTitle] = useState<string>('')
   const [studentnumber, setStudentnumber] = useState<string>('')
 
-  const [showModal, setShowModal] = useState<boolean>(false)
-
-  const pickImage = async (pic_type: string) => {
+  const pickImage = async (pic_type: string, square: boolean = false) => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
+      aspect: square ? [1, 1] : undefined,
       quality: 1,
     })
 
@@ -99,11 +98,11 @@ const SettingsPage = () => {
         { justifyContent: 'center', marginVertical: 10 },
       ]}
     >
-      <Text style={styles.title}>Asetukset</Text>
+      <Text style={[styles.title, { marginBottom: 5 }]}>Asetukset</Text>
       <View style={styles.flexColumn}>
         <Pressable
           style={styles.button}
-          onPress={() => pickImage('profilepic')}
+          onPress={() => pickImage('profilepic', true)}
         >
           <Text style={{ color: '#F81E6E', fontWeight: '600' }}>
             Vaihda Profiilikuva

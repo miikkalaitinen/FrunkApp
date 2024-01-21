@@ -23,53 +23,33 @@ const OtherPage = () => {
     <View
       style={[styles.basiccontainer, { justifyContent: 'center', gap: 15 }]}
     >
-      <Text
-        style={{
-          width: '100%',
-          fontSize: 18,
-          color: '#FFF',
-          fontFamily: 'Montserrat_300Light',
-        }}
-      >
+      <Text style={styles.otherPageText}>
         Muuta kuvaa, logoa ja muita tietoja asetukset sivulla:{' '}
         <Entypo name="text" size={20} color={'white'} />
         {'\n'}
         Tallennetuasi tiedot, voit päivittää kortin painamalla{' '}
         <Feather name="check" size={24} /> -painiketta.
       </Text>
-      <Text
-        style={{
-          fontSize: 18,
-          width: '100%',
-          color: '#FFFFFF',
-          fontFamily: 'Montserrat_300Light',
-        }}
-      >
+      <Text style={styles.otherPageText}>
         Tekijänoikeussyistä kortin oikessa alalaidassa ei ole logoa. Voit ladata
         siihen minkä logon tahansa. Esimerkiksi{' '}
         <Text
           onPress={() =>
             Linking.openURL('https://freeimage.host/i/logo.JaY4UNt')
           }
-          style={{
-            fontSize: 18,
-            width: '100%',
-            color: '#F81E6E',
-            fontFamily: 'Montserrat_500Medium',
-            textDecorationLine: 'underline',
-          }}
+          style={[
+            styles.otherPageText,
+            {
+              color: '#F81E6E',
+              fontFamily: 'Montserrat_500Medium',
+              textDecorationLine: 'underline',
+            },
+          ]}
         >
           tälläisen.
         </Text>
       </Text>
-      <Text
-        style={{
-          fontSize: 18,
-          width: '100%',
-          color: '#FFF',
-          fontFamily: 'Montserrat_300Light',
-        }}
-      >
+      <Text style={styles.otherPageText}>
         Tämän sovelluksen tarkoitus on suoraviivaistaa opiskelijakortin käyttöä.
         Tämä sovellus ei ole virallinen opiskelijakortti. Opiskelijaedut
         kuuluvat vain opiskelijoille, joten käytäthän tätä sovellusta vain jos
