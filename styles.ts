@@ -108,6 +108,11 @@ const bigScreenStyle = StyleSheet.create({
     left: -25,
     bottom: 0,
   },
+  textView: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: '15%',
+  },
   profileInfo: {
     gap: 20,
     flex: 2,
@@ -254,6 +259,11 @@ const smallScreenStyle = StyleSheet.create({
     position: 'absolute',
     left: -20,
     bottom: 5,
+  },
+  textView: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: '2%',
   },
   profileInfo: {
     gap: 10,

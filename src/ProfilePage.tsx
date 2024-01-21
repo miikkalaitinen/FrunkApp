@@ -172,7 +172,7 @@ const ProfilePage = () => {
           <Feather name="check" size={24} />
         </AnimatedPressable>
       </View>
-      <View style={{ display: 'flex', flexDirection: 'row', marginTop: 10 }}>
+      <View style={styles.textView}>
         <View style={styles.profileInfo}>
           <View>
             <Text
