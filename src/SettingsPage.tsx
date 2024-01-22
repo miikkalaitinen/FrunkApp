@@ -1,9 +1,12 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { View, Text, TextInput, Pressable, TouchableOpacity, FlatList, FlatListProps } from 'react-native'
 import { styles } from '../styles'
 import { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useIsFocused } from '@react-navigation/native'
+import autoComplete from '../assets/autocomplete.json'
+import Autocomplete from 'react-native-autocomplete-input';
+import React from 'react'
 
 const SettingsPage = () => {
   const isFocused = useIsFocused()
@@ -20,6 +23,33 @@ const SettingsPage = () => {
     'Korkeakouluopiskelija'
   )
   const [studentnumber, setStudentnumber] = useState<string>('')
+
+  const [filteredUniversities, setFilteredUniversities] = useState(autoComplete.finnishUniversities);
+  const [universitiesIsFocused, setUniversitiesIsFocused] = useState<boolean>(false);
+
+  const findUniversity = (query: string) => {
+    if (query) {
+      const regex = new RegExp(`${query.trim()}`, 'i');
+      setFilteredUniversities(autoComplete.finnishUniversities.filter(university => university.search(regex) >= 0));
+    } else {
+      setFilteredUniversities(autoComplete.finnishUniversities);
+    }
+  };
+
+  const renderResultList = (props: FlatListProps<string>) => (
+    <FlatList
+      {...props}
+      keyExtractor={(item) => item}
+      renderItem={({ item }) => (
+        <TouchableOpacity onPress={() => {
+          setSchool(item)
+          setFilteredUniversities([])
+        }}>
+          <Text>{item}</Text>
+        </TouchableOpacity>
+      )}
+    />
+  );
 
   const pickImage = async (pic_type: string, square: boolean = false) => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -129,17 +159,31 @@ const SettingsPage = () => {
           onChangeText={(text) => setBirthday(text)}
         />
         <Text style={styles.subtitle}>Koulun tiedot</Text>
+        <View style={styles.autocompleteContainer}>
+          <Autocomplete
+            autoCapitalize="none"
+            autoCorrect={false}
+            data={filteredUniversities}
+            defaultValue={school}
+            onChangeText={(text: string) => {
+              setSchool(text);
+              findUniversity(text);
+            }}
+            placeholder="Koulu"
+            renderResultList={renderResultList}
+            listContainerStyle={styles.autoCompleteList}
+            inputContainerStyle={styles.autoCompleteText}
+            style={styles.autoCompleteText}
+            hideResults={!universitiesIsFocused || filteredUniversities.length === 0}
+            onFocus={() => setUniversitiesIsFocused(true)}
+            onBlur={() => setUniversitiesIsFocused(false)}
+          />
+        </View>
         <TextInput
           style={styles.input}
           placeholder="Koulu otsikko"
           value={schoolTitle}
           onChangeText={(text) => setSchoolTitle(text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Koulu"
-          value={school}
-          onChangeText={(text) => setSchool(text)}
         />
         <TextInput
           style={styles.input}
