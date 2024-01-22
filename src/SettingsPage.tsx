@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { View, Text, TextInput, Pressable, Alert } from 'react-native'
 import { styles } from '../styles'
 import { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
@@ -35,10 +35,10 @@ const SettingsPage = () => {
           'profilepic',
           JSON.stringify(result.assets[0])
         )
-        alert('Profiilikuva vaihdettu!')
+        Alert.alert('Profiilikuva vaihdettu!')
       } else if (pic_type === 'logo') {
         await AsyncStorage.setItem('logo', JSON.stringify(result.assets[0]))
-        alert('Logo vaihdettu!')
+        Alert.alert('Logo vaihdettu!')
       }
     }
   }
@@ -51,7 +51,7 @@ const SettingsPage = () => {
     await AsyncStorage.setItem('studentnumberTitle', studentnumberTitle)
     await AsyncStorage.setItem('studentnumber', studentnumber)
     await AsyncStorage.setItem('birthday', birthday)
-    alert('Tiedot tallennettu!')
+    Alert.alert('Tiedot tallennettu!')
   }
 
   useEffect(() => {
