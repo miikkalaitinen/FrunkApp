@@ -1,4 +1,4 @@
-import { Text, View, Image, Pressable } from 'react-native'
+import { Text, View, Image, Pressable, Platform } from 'react-native'
 import { isSmallScreen, styles } from '../styles'
 import { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
@@ -30,8 +30,6 @@ const ProfilePage = () => {
 
   const navigation = useNavigation()
   const insets = useSafeAreaInsets()
-
-  console.log(insets.top)
 
   const [profileImage, setProfileImage] =
     useState<ImagePicker.ImagePickerAsset>()
@@ -154,7 +152,12 @@ const ProfilePage = () => {
   }
 
   return (
-    <View style={[styles.basiccontainer, { paddingTop: insets.top + 15 }]}>
+    <View
+      style={[
+        styles.basiccontainer,
+        { paddingTop: isSmallScreen() ? 40 : insets.top },
+      ]}
+    >
       <Text style={[styles.title, { fontFamily: 'Montserrat_600SemiBold' }]}>
         OPISKELIJAKORTTI
       </Text>
