@@ -23,7 +23,7 @@ IOS-versio on tulossa Applen salliessa sovellusten asentamisen App Storen ulkopu
 
 Sovelluksen avautuessa tulee näkyviin opiskelijakortti. Ilman tietoja. Tiedot voi asettaa asetuksista, jotka löytyvät alanavigaation oikeimmasta päästä.
 
-Tekstiasetusten lisäksi voi lisätä kortiin kuvan sekä logon puhelimen tiedostoista. Logo tulee näkyviin kortin oikeaan reunaan, henkilötietojen viereen. Tekijänoikeussyistä kortin oikessa alalaidassa ei ole logoa. Voit ladata siihen minkä logon tahansa. Esimerkiksi [tälläisen](https://freeimage.host/i/logo.JaY4UNt).
+Tekstiasetusten lisäksi voi lisätä kortiin kuvan sekä logon puhelimen tiedostoista. Logo tulee näkyviin kortin oikeaan reunaan, henkilötietojen viereen. Tekijänoikeussyistä kortin oikessa alalaidassa ei valmiiksi ole logoa. Voit ladata siihen minkä logon tahansa. Esimerkiksi [tälläisen](https://freeimage.host/i/logo.JaY4UNt).
 
 Tiedot saa talletattua painamalla "Tallenna"-nappia.
 Kortin tiedot saa ladattua painamalla kortin animoitua ✓-nappia.
