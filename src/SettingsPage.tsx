@@ -16,7 +16,9 @@ const SettingsPage = () => {
   // School information
   const [schoolTitle, setSchoolTitle] = useState<string>('')
   const [school, setSchool] = useState<string>('')
-  const [studentnumberTitle, setStudentnumberTitle] = useState<string>('')
+  const [studentnumberTitle, setStudentnumberTitle] = useState<string>(
+    'Korkeakouluopiskelija'
+  )
   const [studentnumber, setStudentnumber] = useState<string>('')
 
   const pickImage = async (pic_type: string, square: boolean = false) => {
