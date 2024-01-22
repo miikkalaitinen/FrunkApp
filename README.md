@@ -11,7 +11,7 @@ Sovelluksesta on tällä hetkellä saatavissa vain Android-versio. IOS-versio on
 
 ### Android
 
-1. Lataa sovelluksen [APK](https://github.com/miikkalaitinen/FrunkApp/releases/tag/latest), Android varoittaa että sovellus voi olla haitallinen, koska se ladataan tuntemattomasta lähteestä.
+1. Lataa sovelluksen [APK](https://github.com/miikkalaitinen/FrunkApp/releases/latest), Android varoittaa että sovellus voi olla haitallinen, koska se ladataan tuntemattomasta lähteestä.
 2. Avaa ladattu tiedosto, ja asenna sovellus. Google Play Protect varoittaa, että sovellus ei ole suojattu Play Storessa. Tämä johtuu siitä, että sovellus ei ole Googlen hyväksymä. Paina "Lisätietoja" ja "Asenna silti".
 3. Sovellus on nyt asennettu. Sovellus löytyy sovellusvalikosta nimellä "Frunk App".
 
