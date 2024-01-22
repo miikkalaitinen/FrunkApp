@@ -18,7 +18,7 @@ import {
   Montserrat_500Medium,
   Montserrat_600SemiBold,
 } from '@expo-google-fonts/montserrat'
-import { useNavigation } from '@react-navigation/native'
+import { useFocusEffect, useNavigation } from '@react-navigation/native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 const ProfilePage = () => {
@@ -106,8 +106,9 @@ const ProfilePage = () => {
     transform: [{ scale: withSpring(buttonSize.value) }],
   }))
 
-  useEffect(() => {
+  useFocusEffect(() => {
     loadInfo()
+    console.log('ProfilePage focused')
     buttonSize.value = withRepeat(
       withSequence(
         withTiming(1, { duration: 20 }),
@@ -145,7 +146,7 @@ const ProfilePage = () => {
       ),
       -1
     )
-  }, [])
+  })
 
   if (!fonts[0]) {
     return <Text>Loading...</Text>

@@ -27,7 +27,8 @@ const OtherPage = () => {
         Muuta kuvaa, logoa ja muita tietoja asetukset sivulla:{' '}
         <Entypo name="text" size={20} color={'white'} />
         {'\n'}
-        Tallennetuasi tiedot, voit päivittää kortin painamalla{' '}
+        Tallennetuasi tiedot, niiden pitäisi tulla näkyviin kortiin. Voit
+        päivittää kortin manuaalisesti painamalla{' '}
         <Feather name="check" size={24} /> -painiketta.
       </Text>
       <Text style={styles.otherPageText}>
