@@ -1,4 +1,4 @@
-import { Text, View, Image, Pressable, Platform } from 'react-native'
+import { Text, View, Image, Pressable } from 'react-native'
 import { isSmallScreen, styles } from '../styles'
 import { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
