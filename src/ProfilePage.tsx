@@ -31,6 +31,8 @@ const ProfilePage = () => {
   const navigation = useNavigation()
   const insets = useSafeAreaInsets()
 
+  console.log(insets.top)
+
   const [profileImage, setProfileImage] =
     useState<ImagePicker.ImagePickerAsset>()
   const [logoImage, setLogoImage] = useState<ImagePicker.ImagePickerAsset>()
@@ -152,7 +154,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <View style={[styles.basiccontainer, { paddingTop: insets.top }]}>
+    <View style={[styles.basiccontainer, { paddingTop: insets.top + 15 }]}>
       <Text style={[styles.title, { fontFamily: 'Montserrat_600SemiBold' }]}>
         OPISKELIJAKORTTI
       </Text>
