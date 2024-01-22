@@ -7,6 +7,7 @@ import {
   Montserrat_500Medium,
   Montserrat_600SemiBold,
 } from '@expo-google-fonts/montserrat'
+import React from 'react'
 
 const OtherPage = () => {
   const fonts = useFonts({

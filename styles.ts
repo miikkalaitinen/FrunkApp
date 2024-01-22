@@ -155,6 +155,23 @@ const bigScreenStyle = StyleSheet.create({
     color: '#FFF',
     fontFamily: 'Montserrat_300Light',
   },
+  autocompleteContainer: {
+    width: '100%',
+    paddingBottom: 30,
+    
+  },
+  autoCompleteList: {
+    width: '100%',
+    zIndex: 100,
+    height: 200,
+
+  },
+  autoCompleteText: {
+    width: '100%',
+    height: 30,
+    borderRadius: 5,
+    zIndex: 1,
+  },
 })
 
 // SCREENS WITH HEIGHT < 700
@@ -306,6 +323,37 @@ const smallScreenStyle = StyleSheet.create({
     fontSize: 14,
     color: '#FFF',
     fontFamily: 'Montserrat_300Light',
+  },
+  //TODO: fix small screen autocomplete
+  autocompleteContainer: {
+    flex: 1,
+    left: 0,
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    zIndex: 1,
+    width: '100%',
+    height: 25,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  autoCompleteText: {
+    width: '100%',
+    height: 25,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+  },
+  autoCompleteList: {
+    width: '100%',
+    height: 30,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
 })
 

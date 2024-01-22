@@ -1,6 +1,6 @@
 import { Text, View, Image, Pressable } from 'react-native'
 import { isSmallScreen, styles } from '../styles'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as ImagePicker from 'expo-image-picker'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Feather, FontAwesome6 } from '@expo/vector-icons'
@@ -20,6 +20,7 @@ import {
 } from '@expo-google-fonts/montserrat'
 import { useNavigation } from '@react-navigation/native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
 
 const ProfilePage = () => {
   const fonts = useFonts({
