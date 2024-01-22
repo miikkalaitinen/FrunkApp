@@ -27,8 +27,6 @@ const SettingsPage = () => {
       quality: 1,
     })
 
-    console.log(result)
-
     if (!result.canceled) {
       if (pic_type === 'profilepic') {
         await AsyncStorage.setItem(

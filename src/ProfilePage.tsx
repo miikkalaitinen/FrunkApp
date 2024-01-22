@@ -108,7 +108,6 @@ const ProfilePage = () => {
 
   useFocusEffect(() => {
     loadInfo()
-    console.log('ProfilePage focused')
     buttonSize.value = withRepeat(
       withSequence(
         withTiming(1, { duration: 20 }),
