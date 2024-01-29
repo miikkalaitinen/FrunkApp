@@ -65,7 +65,7 @@ const Routing = () => {
               style: 'destructive',
               onPress: async () => {
                 Alert.alert(
-                  'Älä kysy enää',
+                  'Älä kysy',
                   'Oletko varma että et halua enää nähdä tätä ilmoitusta?',
                   [
                     {
