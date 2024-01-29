@@ -1,4 +1,4 @@
-# Frunk App
+# Frunk App !
 
 Frunk App on opiskelijakorttia muistuttava, mainokseton sovellus, jonka tarkoitus on suoraviivaistaa opiskelijakortin käyttöä ja mahdollistaa opiskelijaetujen käyttö ilman mainoksia.
 
